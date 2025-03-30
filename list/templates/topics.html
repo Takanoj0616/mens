@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+新着情報 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/topics.css' %}">
+    <div class="event-section">
+        <h1 class="event-title">EVENT イベント</h1>
+        <div class="event-card">
+            {% for topic in topics %}
+                <div class="event-content">
+                    <h2 class="event-heading">{{ topic.title }}</h2>
+                    <p class="event-date">{{ topic.created_at|date:"Y/m/d H:i" }}</p>
+                    <div class="event-image-container">
+                        {% if topic.image %}
+                            <img src="{{ topic.image.url }}" alt="{{ topic.title }}" class="event-image">
+                        {% endif %}
+                    </div>
+                    <p class="event-description">{{ topic.description|linebreaksbr }}</p>
+                </div>
+            {% empty %}
+                <p>現在、新着情報はありません。</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

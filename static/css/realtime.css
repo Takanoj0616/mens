@@ -1,0 +1,101 @@
+.container > h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #d9ff68;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    background-color: #fcff64;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%; /* 横幅をカードの幅に合わせる */
+    height: 300px; /* 高さを固定 */
+    object-fit: cover; /* 縦横比を維持しながら、コンテナにフィット */
+    border-radius: 10px; /* 角を丸める */
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.card-content {
+    padding: 15px;
+    color: #333;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.time-slot {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.status-box {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.status-available {
+    background-color: #28a745;
+    color: black;
+}
+
+.status-full {
+    background-color: #dc3545;
+    color: black;
+}
+
+h1 {
+    text-align: center; /* 中央揃え */
+    font-size: 24px; /* フォントサイズ */
+    color: #d9ff68; /* テキストカラー */
+    margin-bottom: 20px; /* 下部余白 */
+}

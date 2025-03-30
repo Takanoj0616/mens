@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+待ち時間 - NewElegant
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/realtime.css' %}"> <!-- 専用CSS -->
+<h1 style="text-align: center;">待ち時間</h1>
+<div class="container">
+    {% for therapist in therapists %}
+    <div class="card therapist-card">
+        <!-- セラピストの写真 -->
+        <div class="image-container">
+            {% if therapist.photo %}
+                <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+                {% if therapist.is_new %}
+                    <div class="new-badge">NEW</div>
+                {% endif %}
+            {% else %}
+                <img src="{% static 'images/default-placeholder.png' %}" alt="写真なし">
+            {% endif %}
+        </div>
+        
+        <!-- セラピストの詳細情報 -->
+        <div class="card-content">
+            <h3>{{ therapist.name }} ({{ therapist.age }}歳)</h3>
+            <p>T:{{ therapist.height }} B:{{ therapist.bust }} W:{{ therapist.waist }} H:{{ therapist.hip }}</p>
+            <p class="time-slot">15:00〜14:30</p>
+            
+            <!-- 予約状況を表示 -->
+            {% if therapist.status == 'available' %}
+                <div class="status-box status-available">予約受付中</div>
+            {% elif therapist.status == 'full' %}
+                <div class="status-box status-full">満員御礼</div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

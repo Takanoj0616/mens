@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+確認画面 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="confirm-container">
+        <link rel="stylesheet" href="{% static 'css/review_confirm.css' %}"> 
+        <h1 class="confirm-title">確認画面</h1>
+        <p class="confirm-instructions">以下の内容で送信します。入力内容を確認し、「送信」ボタンをクリックしてください。</p>
+        <ul class="confirm-list">
+            <li><strong>女の子:</strong> 
+                <p>{{ review_data.girl }}</p></li>
+            <li><strong>お客様のお名前:</strong> 
+                <p>{{ review_data.customer_name }}</p></li>
+            <li><strong>ご来店日:</strong> 
+                <p>{{ review_data.visit_date }}</p></li>
+            <li><strong>コメント:</strong> 
+                <p>{{ review_data.comment }}</p></li>
+        </ul>
+        <form method="post" class="confirm-form">
+            {% csrf_token %}
+            <button type="submit" class="btn-submit">送信</button>
+            <a href="{% url 'review_create' %}" class="btn-back">修正する</a>
+        </form>
+    </div>
+</body>
+{% endblock %}

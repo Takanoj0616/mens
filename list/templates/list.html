@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+セラピスト一覧 - NewElegant
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/therapists.css' %}"> <!-- 専用CSS -->
+<h1 style="text-align: center;">セラピスト一覧</h1>
+<div class="container">
+    {% for therapist in therapists %}
+    <div class="card">
+        <div class="image-container">
+            {% if therapist.photo %}
+                <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+            {% else %}
+                <img src="{% static 'images/default-placeholder.png' %}" alt="写真なし">
+            {% endif %}
+        </div>
+        <div class="card-content">
+            <h3>{{ therapist.name }} ({{ therapist.age }}歳)</h3>
+            <p>T:{{ therapist.height }} B:{{ therapist.bust }} W:{{ therapist.waist }} H:{{ therapist.hip }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

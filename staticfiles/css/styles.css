@@ -1,0 +1,115 @@
+/* 基本設定 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Arial", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg,
+        #FFD700, #FF6347, #FF4500, #FF8C00, #FFD700, #DA70D6, #8A2BE2, #7B68EE);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 星空背景 */
+#starry_sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes twinkle {
+    50% {
+        transform: scale(0.7);
+        opacity: 0.6;
+    }
+}
+
+/* ヘッダー画像 */
+.header-image {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+}
+
+.header-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* メニューバー */
+.menu-bar {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(76, 0, 0, 0.9), rgba(51, 0, 0, 0.9));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.menu-bar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar ul li a {
+    display: block;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 15px;
+    font-weight: 400;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu-bar ul li a span {
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.menu-bar ul li a:hover,
+.menu-bar ul li a:active {
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 223, 0, 0.8);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .menu-bar ul li a {
+        font-size: 14px;
+    }
+
+    .menu-bar ul li a span {
+        font-size: 10px;
+    }
+}
+

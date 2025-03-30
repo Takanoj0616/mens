@@ -1,0 +1,10 @@
+<h2>投稿内容確認</h2>
+<p>タイトル: {{ post_data.girl }}</p>
+<p>内容: {{ post_data.customer_name }}</p>
+<p>内容: {{ post_data.visit_date }}</p>
+<p>内容: {{ post_data.comment }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">送信する</button>
+</form>
+<a href="{% url 'post_create' %}">戻る</a>

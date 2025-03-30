@@ -1,0 +1,26 @@
+/* Center the map container and adjust layout */
+.map-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the map */
+    align-items: center; /* Vertically center if needed */
+    flex-direction: column; /* Keep title above the map */
+    height: 100%; /* Take the full height of the content area */
+    padding: 20px; /* Add padding around the content */
+}
+
+/* Map size and appearance */
+#map {
+    width: 50%; /* Adjust the width to fit nicely */
+    height: 500px; /* Adjust the height to match the desired size */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below the title */
+    color: white; /* Adjust color to match the design */
+}
+

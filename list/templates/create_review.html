@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+投稿フォーム - NewElegant
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}"> 
+    <h2>投稿フォーム</h2>
+    <p>下記のフォームに必要事項を記入のうえ、「確認画面」をクリックしてください。</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_girl">女の子</label>
+            {{ form.girl }}
+        </div>
+        <div class="form-group">
+            <label for="id_customer_name">お客様のお名前</label>
+            {{ form.customer_name }}
+        </div>
+        <div class="form-group">
+            <label for="id_visit_date">ご来店日</label>
+            {{ form.visit_date }}
+        </div>
+        <div class="form-group">
+            <label for="id_comment">コメント</label>
+            {{ form.comment }}
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="btn-submit">確認画面</button>
+            <button type="reset" class="btn-reset">リセット</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

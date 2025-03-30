@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動きのある星空背景</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, 
+                #FFD700, #FF6347, #FF4500, #FF8C00, #FFD700, #DA70D6, #8A2BE2, #7B68EE);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            color: #fff;
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 星空コンテナ */
+        #starry_sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* 星のスタイル */
+        .star {
+            background-color: white;
+            position: absolute;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+            box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        /* 星の輝きアニメーション */
+        @keyframes twinkle {
+            50% {
+                transform: scale(0.7);
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 星空背景 -->
+    <div id="starry_sky"></div>
+    豪華で動きのある星空背景サンプル
+
+    <!-- JavaScriptで星をランダム生成 -->
+    <script>
+        const starContainer = document.getElementById("starry_sky");
+        const numberOfStars = 100; // 星の数
+
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+
+            // ランダムなサイズと位置
+            const size = Math.random() * 3 + 2; // 2px〜5pxのサイズ
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+
+            // ランダムなアニメーション遅延
+            star.style.animationDelay = `${Math.random() * 2}s`;
+
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

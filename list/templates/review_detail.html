@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Detail</title>
+</head>
+<body>
+    <h1>投稿内容</h1>
+    <ul>
+        <li><strong>タイトル:</strong> {{ review.title }}</li>
+        <li><strong>本文:</strong> {{ review.content }}</li>
+        <li><strong>投稿日時:</strong> {{ review.created_at }}</li>
+    </ul>
+    <a href="{% url 'create_review' %}">新しい投稿を作成</a>
+</body>
+</html>

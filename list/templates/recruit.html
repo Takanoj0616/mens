@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+求人情報 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <!-- タイトルセクション -->
+        <h1 style="font-size: 48px; font-weight: bold; color: #FFD700; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
+            求人情報 - RECRUIT
+        </h1>
+        <div style="display: inline-block; padding: 5px 15px; background: linear-gradient(45deg, #FFA500, #FF4500); border-radius: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 18px; font-weight: 500; color: #fff; margin: 0;">求人情報をご確認し応募お待ちしております！</p>
+        </div>
+    </div>
+
+    <!-- 写真セクション -->
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="{% static "images/1.jpg"%}" alt="求人画像" style="max-width: 500%"; height="500">
+    </div>
+
+        <!-- 求人内容 -->
+        <div style="max-width: 800px; margin: 50px auto; color: #333; font-family: 'Arial', sans-serif; background-color: rgba(255, 255, 255, 0.3); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                はじめまして！NewElegantです。当店の求人情報をご覧くださり有難うございます。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                当店では例外なく20歳より下の年齢の方はお断りしております。ある程度の大人の女性のみで運営していきたいと思っております。ご了承くださいませ。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                当店は一般的なメンズエステと比べると少々高価なお金を頂くことになりますので、サービス精神・ホスピタリティ、そして笑顔を重視しております。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                こういった場所で働く上で重要視してほしいのが、『今まで働いていた時間に自由な時間を作れる』というところ。空いた時間は好きなことをしながら、主婦しながら、ほかの仕事をしながら等々、いろんな事とのかけもち勤務が可能です。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                当店は空いた時間だけのアルバイトが可能ですし、急な出勤ももちろん大歓迎です。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                メンズエステは確かに大変なお仕事ではあります。しかし当店ではアルバイトで1ヶ月頑張ったくらいのお給料は約2.3日で稼げてしまいます。もちろん月収100万円以上も可能ですし、そこを目標に稼いでいただきたいと思っております。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                彼氏・旦那様に内緒で稼ぎたい方、日頃の主婦業の息抜きに勤務される方、日常離れした時間を楽しみに勤務される方、様々な女性が在籍しております。
+            </p>
+            <p style="line-height: 1.8; font-size: 16px; margin-bottom: 15px;">
+                それぞれが個性豊かで本当に魅力的な女性だと思います。きっとアナタの輝ける場所もここにあります。ご応募心よりお待ちしております。
+            </p>
+        </div>
+
+        <!-- 募集条項 -->
+        <div style="max-width: 800px; margin: 50px auto; color: #fff; font-family: 'Arial', sans-serif; background-color: rgba(128, 0, 128, 0.2); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+            <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+                募集要項
+            </h2>
+            <table style="width: 100%; border-collapse: collapse; background: rgba(0, 0, 0, 0.05);">
+                <tr style="background-color: rgba(128, 0, 128, 0.25);">
+                    <th style="padding: 15px; font-size: 16px; font-weight: bold; text-align: left; color: #FFD700; border: 1px solid #fff;">
+                        項目
+                    </th>
+                    <th style="padding: 15px; font-size: 16px; font-weight: bold; text-align: left; color: #FFD700; border: 1px solid #fff;">
+                        詳細
+                    </th>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        店名
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">NewElagant</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        業種
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">メンズエステ</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        仕事内容
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">男性のお客様にアロマオイルで全身のマッサージを行う健全なお仕事になります。</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        応募資格
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">20歳～40歳までの方<br>経験者、未経験者、主婦歓迎！</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        給与
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">日給5万円以上可能</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        勤務地
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">桜木町駅から徒歩1分</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        勤務形態
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">完全自由出勤制<br>週1日～OK！</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        勤務時間
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">10:00～翌5:00<br>[営業時間の中でお好きな時間でOK！]</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #fff; background-color: rgba(128, 0, 128, 0.2);">
+                        応募受付時間
+                    </td>
+                    <td style="padding: 15px; border: 1px solid #fff;">お問い合わせ・ご応募は24時間受付中</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Q&A. -->
+        <div style="max-width: 800px; margin: 50px auto; color: #333; font-family: 'Arial', sans-serif; background-color: rgba(255, 255, 255, 0.3); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+            <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+                Q&A
+            </h2>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q1')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接後、どれくらいで結果が分かりますか？
+                </button>
+                <div id="q1" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.4); margin-top: 5px; border-radius: 5px;">
+                    A. 面接後、即日結果をご連絡いたします。
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q3')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 子持ちなのですが、面接の際に連れて行っても構わないでしょうか？
+                </button>
+                <div id="q4" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.4); margin-top: 5px; border-radius: 5px;">
+                    A. お子様連れでも大丈夫です。お菓子を用意しておきます♪ ご安心ください。
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q4')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接の際にはどんな服装で行った方がいいですか？
+                </button>
+                <div id="p4" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.8); margin-top: 5px; border-radius: 5px;">
+                    A. 人前に出れるような常識的な服装でしたら大丈夫です！ 事情があってジャージしか来てこれない方は事前にご相談ください！（びっくりするので）
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q3')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接後にそのまま勤務開始（体験入店等）はできますか？
+                </button>
+                <div id="q4" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.8); margin-top: 5px; border-radius: 5px;">
+                    A. もちろんです！90％の方は面接日から働かれます！
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q5')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接時の交通費は支給されますか？
+                </button>
+                <div id="q5" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.8); margin-top: 5px; border-radius: 5px;">
+                    A. はい！飛行機、新幹線以外は全額支給します！
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q6')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接はどこで行いますか？
+                </button>
+                <div id="q6" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.8); margin-top: 5px; border-radius: 5px;">
+                    A. 喫茶店でお茶しながらおこないます！
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <button onclick="toggleAnswer('q7')" style="width: 100%; background-color: rgba(255, 165, 0, 0.4); color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 16px; text-align: left; cursor: pointer;">
+                    Q. 面接は店舗の営業時間内ですか？営業時間外でも大丈夫ですか？
+                </button>
+                <div id="q7" style="display: none; padding: 10px; background-color: rgba(255, 255, 255, 0.8); margin-top: 5px; border-radius: 5px;">
+                    A. はい。営業時間外でも面接可能です！
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 50px auto; color: #333; font-family: 'Arial', sans-serif; background-color: rgba(255, 255, 255, 0.3); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+            <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+                お問い合わせ・ご応募は24時間受付中
+            </h2>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <!-- 電話ボタン -->
+                <div style="background-color: #FFB6C1; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 150px;">
+                    <a href="tel:070-7405-2066" style="text-decoration: none; color: #333; font-size: 16px; font-weight: bold;">
+                        <img src="{% static 'images/phone.jpg' %}" alt="電話アイコン" style="width: 40px; height: 40px; margin-bottom: 10px;">
+                        <br>070-7405-2066
+                    </a>
+                </div>
+        
+                <!-- メールボタン -->
+                <div style="background-color: #ADD8E6; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 150px;">
+                    <a href="mailto:recruit@majora-chijora.com" style="text-decoration: none; color: #333; font-size: 16px; font-weight: bold;">
+                        <img src="{% static 'images/email.jpg' %}" alt="メールアイコン" style="width: 40px; height: 40px; margin-bottom: 10px;">
+                        <br>メールで応募
+                    </a>
+                </div>
+        
+                <!-- LINEボタン -->
+                <div style="background-color: #90EE90; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 150px;">
+                    <a href="https://line.me/R/ti/p/@majora" style="text-decoration: none; color: #333; font-size: 16px; font-weight: bold;" target="_blank">
+                        <img src="{% static 'images/line1.jpg' %}" alt="LINEアイコン" style="width: 40px; height: 40px; margin-bottom: 10px;">
+                        <br>LINE応募
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function toggleAnswer(id) {
+                const answer = document.getElementById(id);
+                if (answer.style.display === "none") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            }
+        </script>
+        
+        <script>
+            function toggleAnswer(id) {
+                const answer = document.getElementById(id);
+                if (answer.style.display === "none") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            }
+        </script>
+</body>
+{% endblock %}

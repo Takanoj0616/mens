@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ therapist.name }}の詳細</title>
+</head>
+<body>
+    <h1>{{ therapist.name }} のプロフィール</h1>
+    {% if therapist.photo %}
+        <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+    {% else %}
+        <img src="/static/default-placeholder.png" alt="写真なし">
+    {% endif %}
+    <p>年齢: {{ therapist.age }} 歳</p>
+    <p>身長: {{ therapist.height }} cm</p>
+    <p>B:{{ therapist.bust }} W:{{ therapist.waist }} H:{{ therapist.hip }}</p>
+    {% if therapist.schedule %}
+        <p>スケジュール: {{ therapist.schedule }}</p>
+    {% else %}
+        <p>出勤予定なし</p>
+    {% endif %}
+    <a href="{% url 'therapist-list' %}">一覧に戻る</a>
+</body>
+</html>

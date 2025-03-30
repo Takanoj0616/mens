@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+アクセス - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <link rel="stylesheet" href="{% static 'css/therapists.css' %}"> 
+    <h1>本日の出勤情報</h1>
+
+    <!-- 出勤情報のコンテナ -->
+    <div class="container">
+        {% for therapist in therapists %}
+            <div class="card">
+                <!-- リボン（NEW タグ用） -->
+                {% if therapist.is_new %}
+                    <div class="ribbon">NEW</div>
+                {% endif %}
+
+                <!-- 画像部分 -->
+                <div class="image-container">
+                    {% if therapist.photo %}
+                        <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default_therapist.jpg' %}" alt="No Image">
+                    {% endif %}
+                </div>
+
+                <!-- 内容部分 -->
+                <div class="card-content">
+                    <h3>{{ therapist.name }}</h3>
+                    <p>年齢: {{ therapist.age }}</p>
+                    <p>身長: {{ therapist.height }} cm</p>
+                    <p>バスト: {{ therapist.bust }}</p>
+                    <p>ウエスト: {{ therapist.waist }}</p>
+                    <p>ヒップ: {{ therapist.hip }}</p>
+
+                    <!-- スケジュール -->
+                    <p class="schedule">出勤予定: {{ therapist.schedule|get_item:today }}</p>
+
+                    <!-- 動画部分 -->
+                    {% if therapist.video %}
+                        <video width="100%" controls>
+                            <source src="{{ therapist.video.url }}" type="video/mp4">
+                            お使いのブラウザは動画再生に対応していません。
+                        </video>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>本日の出勤情報はありません。</p>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,135 @@
+.event-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.event-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.event-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.event-content {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.event-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #FFD700; /* ゴールドで強調 */
+}
+
+.event-date {
+    font-size: 14px;
+    color: #ccc;
+    margin: 5px 0 15px;
+}
+
+/* 画像スタイル */
+.event-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.event-image {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーション */
+}
+
+/* ホバー時の動き */
+.event-image:hover {
+    transform: scale(1.1); /* 拡大 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* シャドウを強調 */
+}
+
+/* 説明文のスタイル */
+.event-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.event-card li {
+    color: black; /* 文字色を黒に設定 */
+    font-size: 16px; /* 文字サイズを調整 */
+    line-height: 1.5; /* 行間を調整 */
+}
+
+.event-card {
+    display: flex;
+    align-items: center; /* 画像とテキストを上下中央揃え */
+    gap: 20px; /* 画像とテキストの間にスペースを追加 */
+    padding: 20px;
+
+}
+
+.event-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.review-text {
+    flex: 1; /* テキスト部分が残りのスペースを占有 */
+}
+
+.new-review-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.event-card {
+    display: flex;
+    align-items: flex-start; /* 上下を揃える */
+    gap: 20px; /* 画像とテキストの間隔 */
+    padding: 20px; /* 内側の余白 */
+    border: 1px solid #ddd; /* 枠線 */
+    margin-bottom: 30px; /* 各レビュー間の間隔を広げる */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+.event-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px; /* 画像の角を丸く */
+}
+
+.review-text {
+    color: #333; /* 文字色を黒に近いグレーに */
+    font-size: 16px; /* 優しい印象の文字サイズ */
+    line-height: 1.8; /* 行間を広く */
+    font-family: 'Arial', sans-serif; /* 優しい印象のフォント */
+    text-align: left; 
+}
+
+.review-text p {
+    margin-top: 10px; /* コメントと他の要素の間隔を広げる */
+}
+
+.review-text small {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px; /* 投稿日の文字サイズを少し小さめに */
+    color: #333; /* 優しいグレー */
+}
+

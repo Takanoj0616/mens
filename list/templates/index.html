@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% load static %} <!-- これが必要 -->
+
+{% block title %}
+Home - NewElegant
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 30px;">
+    <img src="{% static 'images/2.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
+</div>
+<div style="text-align: center; margin-top: 30px;">
+    <img src="{% static 'images/3.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
+</div>
+<div style="text-align: center; margin-top: 30px;">
+    <img src="{% static 'images/paypay.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="video-container" style="text-align: center; margin-top: 30px;">
+    <video width="1000" height="315" controls>
+        <source src="{% static 'images/5.mp4' %}" type="video/mp4">
+        お使いのブラウザは動画再生に対応していません。
+    </video>
+</div>
+
+
+<link rel="stylesheet" href="{% static 'css/realtime.css' %}"> <!-- 専用CSS -->
+<h1 style="text-align: center;">待ち時間</h1>
+<div class="container">
+    {% for therapist in therapists %}
+    <div class="card therapist-card">
+        <!-- セラピストの写真 -->
+        <div class="image-container">
+            {% if therapist.photo %}
+                <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+                {% if therapist.is_new %}
+                    <div class="new-badge">NEW</div>
+                {% endif %}
+            {% else %}
+                <img src="{% static 'images/default-placeholder.png' %}" alt="写真なし">
+            {% endif %}
+        </div>
+        
+        <!-- セラピストの詳細情報 -->
+        <div class="card-content">
+            <h3>{{ therapist.name }} ({{ therapist.age }}歳)</h3>
+            <p>T:{{ therapist.height }} B:{{ therapist.bust }} W:{{ therapist.waist }} H:{{ therapist.hip }}</p>
+            <p class="time-slot">11:00〜18:30</p>
+            
+            <!-- 予約状況を表示 -->
+            {% if therapist.status == 'available' %}
+                <div class="status-box status-available">予約受付中</div>
+            {% elif therapist.status == 'full' %}
+                <div class="status-box status-full">満員御礼</div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<link rel="stylesheet" href="{% static 'css/therapists.css' %}"> 
+<h1 style="text-align: center;">新人情報</h1>
+
+<div class="container">
+    {% for therapist in therapists %}
+    <div class="card">
+        <!-- リボンの表示 -->
+        {% if therapist.is_new %}
+            <div class="ribbon">NEW</div>
+        {% endif %}
+        
+        <div class="image-container">
+            {% if therapist.photo %}
+                <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }}">
+            {% else %}
+                <img src="{% static 'images/default-placeholder.png' %}" alt="写真なし">
+            {% endif %}
+        </div>
+
+        <div class="card-content">
+            <h3>{{ therapist.name }} ({{ therapist.age }}歳)</h3>
+            <p>T: {{ therapist.height }} B: {{ therapist.bust }} W: {{ therapist.waist }} H: {{ therapist.hip }}</p>
+
+            <div class="schedule">次回出勤: {{ therapist.next_schedule|default:"未定" }}</div>
+        </div>
+    </div>
+    {% empty %}
+        <p>NEWタグのついたセラピストはいません。</p>
+    {% endfor %}
+</div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/topics.css' %}">
+<div class="event-section">
+    <h1 class="event-title">what's new 新着情報</h1>
+    <div class="event-card">
+        {% for topic in topics %}
+            <div class="event-content">
+                <h2 class="event-heading">{{ topic.title }}</h2>
+                <p class="event-date">{{ topic.created_at|date:"Y/m/d H:i" }}</p>
+                <div class="event-image-container">
+                    {% if topic.image %}
+                        <img src="{{ topic.image.url }}" alt="{{ topic.title }}" class="event-image">
+                    {% endif %}
+                </div>
+                <p class="event-description">{{ topic.description|linebreaksbr }}</p>
+            </div>
+        {% empty %}
+            <p>現在、新着情報はありません。</p>
+        {% endfor %}
+    </div>
+</div>
+</body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/topics.css' %}">
+<div class="event-section">
+    <h1 class="event-title">EVENT イベント</h1>
+    <div class="event-card">
+        {% for topic2 in topics %}
+            <div class="event-content">
+                <h2 class="event-heading">{{ topic2.title }}</h2>
+                <p class="event-date">{{ topic2.created_at|date:"Y/m/d H:i" }}</p>
+                <div class="event-image-container">
+                    {% if topic2.image %}
+                        <img src="{{ topic2.image.url }}" alt="{{ topic2.title }}" class="event-image">
+                    {% endif %}
+                </div>
+                <p class="event-description">{{ topic2.description|linebreaksbr }}</p>
+            </div>
+        {% empty %}
+            <p>現在、新着情報はありません。</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

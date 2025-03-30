@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+レビュー一覧 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reviews.css' %}">
+    
+    <div class="event-section">
+        <a href="{% url 'review_create' %}" class="new-review-link">新規レビューを作成</a>
+        <h1 class="event-title">口コミ</h1>
+        
+        {% for review in reviews %}
+        <div class="event-card">
+            <img src="{{ review.girl.photo.url }}" alt="{{ review.girl.name }}の写真" style="width: 350px; height: auto; border-radius: 8px;">
+            
+            <div class="review-text" style="color: #333; font-size: 17px; line-height: 1.8;">
+                <strong style="color: red;">{{ review.girl.name }}</strong><br>
+                投稿者: <span style="font-weight: bold;">{{ review.customer_name }} 様</span><br>
+                ご来店日: <span style="font-style: italic;">{{ review.visit_date }}</span><br>
+                <p style="margin-top: 10px;">
+                    <p>コメント: {{ review.comment }}</p></p>
+                <small style="display: block; margin-top: 10px; font-size: 14px;">投稿日: {{ review.created_at }}</small>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+
+{% endblock %}

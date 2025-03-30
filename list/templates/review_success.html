@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+投稿成功 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/review_success.css' %}">
+    <div class="center-content">
+        <h1 class="success-title">投稿完了!!</h1>
+        <a href="{% url 'review_list' %}" class="new-review-link">投稿一覧</a>
+    </div>
+</body>
+{% endblock %}

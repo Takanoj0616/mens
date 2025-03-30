@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+料金表 - NewElegant
+{% endblock %}
+
+{% block content %}
+<body>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <!-- タイトルセクション -->
+        <h1 style="font-size: 48px; font-weight: bold; color: #FFD700; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
+            SYSTEM - 料金表
+        </h1>
+        <div style="display: inline-block; padding: 5px 15px; background: linear-gradient(45deg, #FFA500, #FF4500); border-radius: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 18px; font-weight: 500; color: #fff; margin: 0;">最新の価格とプランをご確認ください</p>
+        </div>
+    </div>
+
+    <!-- コースセクション -->
+    <div style="max-width: 800px; margin: 50px auto; color: #fff; font-family: 'Arial', sans-serif; background-color: rgba(128, 0, 128, 0.2); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+        <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+            オリジナルデトックスコース
+        </h2>
+    <p style="text-align: center; font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 20px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);">
+        ※施術内容は口外禁止です
+    </p>
+
+    <!-- テーブルセクション -->
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); border-radius: 10px; overflow: hidden;">
+        <tr style="background-color: rgba(150, 0, 150, 0.4);">
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                コース時間
+            </th>
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                料金
+            </th>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                70分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">15,000円</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                90分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">19,000円</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                120分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">25,000円</td>
+        </tr>
+    </table>
+
+    <!-- ★☆サキュバスコース☆★ -->
+    <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+        ⭐️サキュバスコース⭐️
+    </h2>
+    <p style="text-align: center; font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 20px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);">
+        ※『オプションどうされますか～？』がチョット苦手な貴方へ。最初から付いてます。
+    </p>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); border-radius: 10px; overflow: hidden;">
+        <tr style="background-color: rgba(150, 0, 150, 0.4);">
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                コース時間
+            </th>
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                料金
+            </th>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                90分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">22,000円</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                120分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">28,000円</td>
+        </tr>
+    </table>
+
+    <!-- その他料金 -->
+    <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+        その他料金
+    </h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); border-radius: 10px; overflow: hidden;">
+        <tr style="background-color: rgba(150, 0, 150, 0.4);">
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                内容
+            </th>
+            <th style="padding: 15px; border: 1px solid #fff; font-size: 20px; font-weight: bold; color: #FFE066; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                料金
+            </th>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                指名料
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">2,000円</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid #fff; font-weight: bold; background-color: rgba(100, 0, 100, 0.4); text-align: center;">
+                延長30分
+            </td>
+            <td style="padding: 15px; border: 1px solid #fff; text-align: center;">8,000円</td>
+        </tr>
+    </table>
+</div>
+
+<!-- ご利用規約 -->
+<div style="max-width: 800px; margin: 50px auto; color: #fff; font-family: 'Arial', sans-serif; background-color: rgba(128, 0, 128, 0.2); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); padding: 20px;">
+    <h2 style="text-align: center; font-size: 28px; font-weight: bold; color: #FFD700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); margin-bottom: 20px;">
+        ご利用規約
+    </h2>
+    <p style="line-height: 1.8; font-size: 16px; color: #000;">
+        当店はアロマトリートメントなどによるリラクゼーションサロンです。日本人セラピストのみを採用したリラクゼーションサロンです。医療法が定める病院や診療院、指圧・按摩マッサージ、鍼灸による施術所ではありません。セラピストに対する暴言や嫌がらせ、性的サービスの強要は禁止しております。
+    </p>
+    <p style="line-height: 1.8; font-size: 16px; color: #000;">
+        セラピストに電話番号やメールを聞いたり、店外デートの誘い、同業者のスカウト行為は禁止しております。
+    </p>
+    <p style="line-height: 1.8; font-size: 16px; color: #000;">
+        泥酔されている方、違法薬物使用者、発熱のある方のご利用をお断りしております。<br>
+        怪我・火傷・打撲などの炎症のある方、重度の皮膚疾患などのある方のご利用をお断りしております。<br>
+        暴力団関係者、それに準じる方のご利用をお断りしております。<br>
+        盗撮や盗聴などの行為を禁止しております。
+    </p>
+    <p style="line-height: 1.8; font-size: 16px; color: #000;">
+        上記に該当するお客様、その他セラピストが嫌がる行為をされるお客様は、当店のご利用をお断り致します。その他、当店がご利用にふさわしくないと判断した場合は施術を中止しご退出していただく場合がございます。その際は料金の返金は致しませんので予めご了承ください。
+    </p>
+</div>
+</body>
+{% endblock %}
