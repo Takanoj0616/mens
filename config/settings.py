@@ -67,10 +67,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydbmens',  # Dockerで設定したデータベース名
-        'USER': 'admin',                  
-        'PASSWORD': 'takano0616',         
-        'HOST': '127.0.0.1',              # MySQLのホスト名（Dockerの場合、通常localhostや127.0.0.1）
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'Takano0616',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
