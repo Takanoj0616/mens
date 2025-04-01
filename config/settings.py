@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-(#brs!o@b)ocfhg5)0osn=zuz^v-fj&ma(72zl3jnx7f%m!@p*
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['153.121.33.110', 'localhost']
+ALLOWED_HOSTS = ['153.121.33.110', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,7 +70,7 @@ DATABASES = {
         'NAME': 'mydb',
         'USER': 'myuser',
         'PASSWORD': 'Takano0616',
-        'HOST': 'localhost',
+        'HOST': '153.121.33.110',
         'PORT': '3306',
     }
 }
