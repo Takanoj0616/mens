@@ -7,4 +7,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 application = get_wsgi_application()
 
 
-##TODO DB接続、レイアウト直す
+##TODO レイアウト直す
