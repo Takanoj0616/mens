@@ -1,0 +1,104 @@
+/* フォーム全体を中央に配置 */
+.form-container {
+    width: 50%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ヘッダーのスタイリング */
+.form-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.form-container span {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* フォームの各項目 */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group .required {
+    color: #FF4500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #FF6347;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+}
+
+/* ボタンのデザイン */
+.form-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.submit-button, .reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button {
+    background-color: #FFD700;
+}
+
+.reset-button {
+    background-color: #FF6347;
+}
+
+.submit-button:hover {
+    background-color: #FFA500;
+}
+
+.reset-button:hover {
+    background-color: #FF4500;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+    input, select, textarea {
+        font-size: 12px;
+    }
+    .submit-button, .reset-button {
+        font-size: 14px;
+    }
+}

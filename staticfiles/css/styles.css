@@ -10,6 +10,8 @@ html, body {
         #FFD700, #FF6347, #FF4500, #FF8C00, #FFD700, #DA70D6, #8A2BE2, #7B68EE);
     background-size: 400% 400%;
     animation: gradientBG 20s ease infinite;
+    overflow-x: hidden; /* 横スクロール防止 */
+    box-sizing: border-box; /* 余白削除 */
 }
 
 @keyframes gradientBG {
@@ -18,42 +20,131 @@ html, body {
     100% { background-position: 0% 50%; }
 }
 
-/* 星空背景 */
-#starry_sky {
+#bubble-container {
+    position: fixed; /* 背景全体に固定 */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    z-index: 5; /* 他の要素の背後に配置 */
+    pointer-events: none; /* クリック無効化 */
+    overflow: hidden; /* シャボン玉が画面外に出たときに隠す */
+}
+
+/* シャボン玉のスタイル */
+.bubble {
     position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4); /* 半透明の白 */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* 光のエフェクト */
+    animation: float 15s infinite ease-in-out; /* 浮かぶアニメーション */
+    mix-blend-mode: lighten; /* 背景に溶け込むようなエフェクト */
+}
+
+/* 浮かぶアニメーション */
+@keyframes float {
+    0% {
+        transform: translateY(100vh); /* 画面下からスタート */
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh); /* 画面上に消える */
+        opacity: 0;
+    }
+}
+
+#stars-container {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0; /* 泡より前に表示 */
     pointer-events: none;
-    z-index: 0;
+    overflow: hidden;
 }
 
 .star {
-    background-color: white;
     position: absolute;
-    border-radius: 50%;
-    animation: twinkle 2s infinite alternate;
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4); /* 半透明の白 */
+    width: 15px; /* 星の幅を小さく */
+    height: 15px; /* 星の高さを小さく */
+    clip-path: polygon(
+        50% 0%,   /* 上頂点 */
+        61% 35%,  /* 右上 */
+        98% 35%,  /* 右端 */
+        68% 57%,  /* 右下 */
+        79% 91%,  /* 右下端 */
+        50% 70%,  /* 下 */
+        21% 91%,  /* 左下端 */
+        32% 57%,  /* 左下 */
+        2% 35%,   /* 左端 */
+        39% 35%   /* 左上 */
+    ); /* 星型の輪郭を指定 */
+    animation: sparkle 2s infinite alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* 光の効果を強調 */
 }
 
-@keyframes twinkle {
+/* キラキラするアニメーション */
+@keyframes sparkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8); /* 少し小さく */
+    }
     50% {
-        transform: scale(0.7);
-        opacity: 0.6;
+        opacity: 1;
+        transform: scale(1); /* 通常サイズ */
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8); /* 再び小さく */
     }
 }
-
-/* ヘッダー画像 */
-.header-image {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px 0;
+/* 各セクション */
+.section {
+    margin: 0; /* 外側余白を完全削除 */
+    padding: 50px 0; /* 内側余白のみ設定 */
+    background: inherit; /* 背景を親要素と一致させる */
+    border: none; /* 境界線削除 */
 }
 
-.header-image img {
-    max-width: 300px;
-    height: auto;
+/* テーブルのデザイン修正 */
+table {
+    width: 100%;
+    border-collapse: collapse; /* セル間の隙間を削除 */
+    background: transparent; /* テーブル背景を透明にする */
+}
+
+td, th {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 薄い境界線 */
+    background-color: rgba(255, 99, 71, 0.8); /* セル背景を統一 */
+}
+
+/* Q&Aセクション */
+.qna-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* セクション境目修正 */
+.qna-section,
+table {
+    margin: 0; /* 外側余白を完全削除 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 10px;
+    }
 }
 
 /* メニューバー */
@@ -102,14 +193,74 @@ html, body {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 223, 0, 0.8);
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .menu-bar ul li a {
-        font-size: 14px;
-    }
-
-    .menu-bar ul li a span {
-        font-size: 10px;
-    }
+footer {
+    background-color: #3A1E1E; /* 背景色 */
+    color: #fff;
+    padding: 40px 20px; /* 内側余白を広げる */
+    margin-top: 20px; /* フッターと上のセクションの間に余裕を追加 */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
 }
 
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .container div {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* テキストの中央揃えやレスポンシブ対応 */
+footer h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #FF4500;
+}
+
+footer p {
+    margin: 0;
+    font-size: 12px;
+    text-align: right;
+}
+
+.content {
+    position: relative; /* z-index を有効化するために設定 */
+    z-index: 2; /* 泡や星の上に表示 */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
