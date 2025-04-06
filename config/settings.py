@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-(#brs!o@b)ocfhg5)0osn=zuz^v-fj&ma(72zl3jnx7f%m!@p*'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['153.121.33.110', 'localhost', '127.0.0.1', 'newelegant.jp']
 
@@ -100,18 +100,8 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# 開発環境での静的ファイル配信を有効にする
-if DEBUG:
-    STATICFILES_FINDERS = [
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    ]
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

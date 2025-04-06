@@ -7,23 +7,27 @@ Home - NewElegant
 {% endblock %}
 
 {% block content %}
-<div style="text-align: center; margin-top: 30px;">
-    <img src="{% static 'images/2.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
-</div>
-<div style="text-align: center; margin-top: 30px;">
-    <img src="{% static 'images/3.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
-</div>
-<div style="text-align: center; margin-top: 30px;">
-    <img src="{% static 'images/paypay.jpg' %}" alt="求人画像" style="max-width: 100%; height: auto;">
-</div>
+<div style="max-width: 1000px; margin: 0 auto;">
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="{% static 'images/2.jpg' %}" alt="求人画像" style="width: 100%; height: auto;">
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="{% static 'images/3.jpg' %}" alt="求人画像" style="width: 100%; height: auto;">
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="{% static 'images/paypay.jpg' %}" alt="求人画像" style="width: 100%; height: auto;">
+    </div>
 
-<div class="video-container" style="text-align: center; margin-top: 30px;">
-    <video width="1000" height="315" controls>
-        <source src="{% static 'images/5.mp4' %}" type="video/mp4">
-        お使いのブラウザは動画再生に対応していません。
-    </video>
+    <div style="position: relative; padding-top: 56.25%; margin-top: 30px;">
+        <iframe 
+            src="https://player.vimeo.com/video/1056653455?h=8206978372"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            frameborder="0" 
+            allowfullscreen
+            title="vimeo-player">
+        </iframe>
+    </div>
 </div>
-
 
 <link rel="stylesheet" href="{% static 'css/realtime.css' %}"> <!-- 専用CSS -->
 <h1 style="text-align: center;">待ち時間</h1>
