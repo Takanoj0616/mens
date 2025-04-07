@@ -283,39 +283,18 @@ footer p {
 
 .header-image {
     width: 100%;
-    height: auto;
     overflow: hidden;
     position: relative;
     background-color: #000;
+    margin-top: 30px;
 }
 
 .header-image img {
     width: 100%;
-    height: 25vw; /* ビューポートの幅に応じて高さを設定 */
-    min-height: 140px; /* 最小高さ */
-    max-height: 300px; /* 最大高さ */
+    height: auto;
     display: block;
     margin: 0 auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-/* タブレットサイズ */
-@media (max-width: 1024px) {
-    .header-image img {
-        height: 30vw;
-    }
-}
-
-/* スマホサイズ */
-@media (max-width: 768px) {
-    .header-image img {
-        height: 35vw;
-    }
-}
-
-/* 小型スマホサイズ */
-@media (max-width: 480px) {
-    .header-image img {
-        height: 40vw;
-    }
-}
+/* レスポンシブ対応は削除 */
