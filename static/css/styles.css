@@ -280,3 +280,26 @@ footer p {
     width: 100%;
     height: 100%;
 }
+
+.header-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #000; /* 画像の隙間を埋める */
+}
+
+.header-image img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* 画像を画面いっぱいに表示 */
+}
+
+/* 画面サイズが小さい場合にさらに調整したいとき（オプション） */
+@media (max-width: 600px) {
+    .header-image img {
+        max-width: 200px;
+    }
+}
