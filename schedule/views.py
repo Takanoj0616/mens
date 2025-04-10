@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from datetime import date
+from datetime import datetime
 from list.models import Therapist
-from django.http import JsonResponse
 
 def schedule_view(request):
-    today = date.today().isoformat()
-    therapists = Therapist.objects.filter(schedule__icontains=today)
-    return render(request, 'schedule.html', {'therapists': therapists, 'today': today})
+    today = datetime.now().date()
+    therapists = Therapist.objects.filter(schedules__date=today).distinct()
+    
+    context = {
+        'therapists': therapists,
+        'today': today,
+    }
+    return render(request, 'schedule.html', context)

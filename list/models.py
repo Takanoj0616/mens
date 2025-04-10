@@ -22,8 +22,6 @@ class Therapist(models.Model):
     comment = models.TextField(verbose_name="コメント", blank=True)
     photo = models.ImageField(upload_to='therapist_photos/', verbose_name="写真", blank=True, null=True)
 
-    # 出勤予定日（複数の予定を保存）
-    schedule = models.JSONField(verbose_name="出勤予定", blank=True, null=True)
     
     # 動画情報
     video = models.FileField(upload_to='therapist_videos/', verbose_name="動画", blank=True, null=True)
@@ -57,3 +55,10 @@ class Therapist(models.Model):
     # 表示名設定
     def __str__(self):
         return self.name
+    
+class WorkSchedule(models.Model):
+    therapist = models.ForeignKey(Therapist, on_delete=models.CASCADE, related_name='schedules')
+    date = models.DateField(verbose_name="出勤日")
+
+    def __str__(self):
+        return f"{self.therapist.name} - {self.date}"

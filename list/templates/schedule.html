@@ -9,7 +9,7 @@
 {% block content %}
 <body>
     <link rel="stylesheet" href="{% static 'css/therapists.css' %}"> 
-    <h1>本日の出勤情報</h1>
+    <h1 class="schedule-title">本日の出勤情報</h1>
 
     <!-- 出勤情報のコンテナ -->
     <div class="container">
@@ -39,7 +39,7 @@
                     <p>ヒップ: {{ therapist.hip }}</p>
 
                     <!-- スケジュール -->
-                    <p class="schedule">出勤予定: {{ therapist.schedule|get_item:today }}</p>
+                    <p class="schedule">出勤予定</p>
 
                     <!-- 動画部分 -->
                     {% if therapist.video %}
