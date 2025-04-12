@@ -17,3 +17,4 @@ def therapist_profile(request, id):
 def realtime_now(request):
     therapists = Therapist.objects.all()
     return render(request, 'realtime.html', {'therapists': therapists})
+

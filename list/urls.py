@@ -9,4 +9,5 @@ urlpatterns = [
     #セラピスト一覧
     path('', views.therapist_list, name='therapist-list'),
     path('now', views.realtime_now, name='realtime-now'),
+    path('realtime', views.realtime_now, name='realtime-now'),
 ]

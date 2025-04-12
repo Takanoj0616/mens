@@ -28,6 +28,9 @@
             <h3>{{ therapist.name }} ({{ therapist.age }}歳)</h3>
             <p>T:{{ therapist.height }} B:{{ therapist.bust }} W:{{ therapist.waist }} H:{{ therapist.hip }}</p>
             <p class="time-slot">15:00〜14:30</p>
+
+            <!-- 詳細画面へのリンク -->
+            <a href="{% url 'therapist-profile' therapist.id %}" class="btn btn-primary">詳細を見る</a>
             
             <!-- 予約状況を表示 -->
             {% if therapist.status == 'available' %}

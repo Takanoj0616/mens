@@ -1,4 +1,4 @@
-#!/Users/takanojunichi/PycharmProjects/Men'sbeautySalon/.venv/bin/python3.12
+#!/Users/j.takano/Desktop/work/django/mens/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
