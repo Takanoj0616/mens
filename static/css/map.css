@@ -24,3 +24,11 @@ h1 {
     color: white; /* Adjust color to match the design */
 }
 
+/* 道案内のテキストスタイル */
+.access-info {
+    color: #000;     
+    font-weight: bold;
+    font-size: 1.1rem;  
+    text-align: center;  
+    margin-top: 20px;    
+}

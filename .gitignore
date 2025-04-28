@@ -1,2 +1,9 @@
 static/images/5.mp4
 static/images/5.mp4
+
+# SQLite DB
+db.sqlite3
+
+# Django migrations (optional)
+**/migrations/*.pyc
+**/migrations/__pycache__/

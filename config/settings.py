@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-(#brs!o@b)ocfhg5)0osn=zuz^v-fj&ma(72zl3jnx7f%m!@p*'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['153.121.33.110', 'localhost', '127.0.0.1', 'newelegant.jp']
 

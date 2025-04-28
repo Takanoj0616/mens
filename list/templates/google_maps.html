@@ -9,18 +9,27 @@
 <link rel="stylesheet" href="{% static 'css/map.css' %}">
 <div class="map-container">
     <h1>アクセス</h1>
+    <p class="access-info">
+        桜木町駅 北口改札を出て野毛へ進み、<br>
+        ファミリーマート 横浜野毛仲通り店からお電話をください。<br>
+        お部屋をご案内いたします。
+    </p>
     <div id="map"></div>
 </div>
 
 <script>
-    let map;
-
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 35.44919944, lng: 139.63117276 }, // Tokyo Station coordinates
-            zoom: 12, // Adjust zoom level as needed
+            center: { lat: 35.4505, lng: 139.6317 }, // 桜木町駅
+            zoom: 16 
+        });
+    
+        const marker = new google.maps.Marker({
+            position: { lat: 35.4505, lng: 139.6317 },
+            map: map,
+            title: "桜木町駅"
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa7WwDh7SHUUJHuzJt2ISncmsKMFN6tMU&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFoWcqyjByXPw6vNg7NaVJn221YHmu_Xs&callback=initMap&language=ja&region=JP" async defer></script>
 {% endblock %}
